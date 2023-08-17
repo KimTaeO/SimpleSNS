@@ -1,6 +1,6 @@
 package com.toyproject.simplesns.global.security.auth
 
-import com.toyproject.simplesns.domain.entity.User
+import com.toyproject.simplesns.domain.user.entity.User
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
 

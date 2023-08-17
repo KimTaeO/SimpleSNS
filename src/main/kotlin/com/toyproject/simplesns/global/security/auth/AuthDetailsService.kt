@@ -1,6 +1,6 @@
 package com.toyproject.simplesns.global.security.auth
 
-import com.toyproject.simplesns.domain.repository.UserRepository
+import com.toyproject.simplesns.domain.user.repository.UserRepository
 import com.toyproject.simplesns.global.exception.exceptions.UserNotFoundException
 import com.toyproject.simplesns.global.security.auth.AuthDetails
 import org.springframework.security.core.userdetails.UserDetails
@@ -13,4 +13,5 @@ class AuthDetailsService(
         val user = userRepository.findByName(username) ?: throw UserNotFoundException()
         return AuthDetails(user)
     }
+
 }
