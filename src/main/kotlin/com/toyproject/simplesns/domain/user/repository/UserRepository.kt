@@ -1,6 +1,6 @@
-package com.toyproject.simplesns.domain.repository
+package com.toyproject.simplesns.domain.user.repository
 
-import com.toyproject.simplesns.domain.entity.User
+import com.toyproject.simplesns.domain.user.entity.User
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface UserRepository : JpaRepository<User, Long> {
