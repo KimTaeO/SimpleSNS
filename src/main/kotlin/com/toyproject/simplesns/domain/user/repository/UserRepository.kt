@@ -5,5 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository
 
 interface UserRepository : JpaRepository<User, Long> {
     fun findByName(name: String): User?
+    fun findByPhoneNumber(phoneNumber: String): User?
     fun existsByPhoneNumberAndTag(phoneNumber: String, tag: String): Boolean
 }
