@@ -17,8 +17,6 @@ class UserUtil(
     }
 
     private fun fetchUserByPhoneNumber(phoneNum: String): User =
-
-        
         userRepository.findByPhoneNumber(phoneNum) ?: throw UserNotFoundException()
 
 }
