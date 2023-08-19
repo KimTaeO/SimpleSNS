@@ -9,8 +9,8 @@ import org.springframework.security.core.userdetails.UserDetailsService
 class AuthDetailsService(
     private val userRepository: UserRepository
 ) : UserDetailsService {
-    override fun loadUserByUsername(username: String): UserDetails {
-        val user = userRepository.findByName(username) ?: throw UserNotFoundException()
+    override fun loadUserByUsername(phoneNumber: String): UserDetails {
+        val user = userRepository.findByPhoneNumber(phoneNumber) ?: throw UserNotFoundException()
         return AuthDetails(user)
     }
 
