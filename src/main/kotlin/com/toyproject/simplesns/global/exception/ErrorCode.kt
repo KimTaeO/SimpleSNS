@@ -20,8 +20,10 @@ enum class ErrorCode(
     NOT_FOUND("리소스를 찾을수 없음", 404),
     LOCATION_NOT_FOUND("위치정보를 찾을 수 없습니다", 404),
     USER_NOT_FOUND("해당 유저를 찾을 수 없습니다.", 404),
+    POST_NOT_FOUND("해당 게시물을 찾을 수 없습니다", 404),
 
     DUPLICATE_PHONE_NUMBER_OR_TAG("중복된 전화번호 또는 태그입니다", 409),
     DUPLICATE_LOCATION("중복된 위치세션입니다", 409),
+    VISIBILITY_NOT_MATCH_EXCEPTION("공개 범위가 일치하지 않습니다", 409),
     INTERNAL_SERVER_ERROR("서버 내부 에러", 500);
 }
