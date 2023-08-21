@@ -11,9 +11,11 @@ class Post(
 
     val content: String,
 
+    var visibility: Boolean = true,
+
     @ManyToOne
     @JoinColumn(name = "user_id")
-    val user:User,
+    val user: User,
 
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "img", joinColumns = [JoinColumn(name = "id")])
