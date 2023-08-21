@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne
 @Entity
 
 class Follow(
-    override val id: Long,
+    override val id: Long = 0L,
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "follower_id")
