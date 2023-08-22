@@ -7,6 +7,7 @@ enum class ErrorCode(
     BAD_REQUEST("잘못된 요청", 400),
     PASSWORD_MISMATCH("비밀번호가 일치하지 않습니다.", 400),
     ALREADY_FOLLOWING_EXCEPTION("이미 팔로우 중인 유저입니다", 400),
+    UNFOLLOWING_USER_EXCEPTION("팔로우 중이지 않은 유저입니다", 400),
 
     UNAUTHORIZED("권한 없음", 401),
     EXPIRED_TOKEN("토큰 만료", 401),
