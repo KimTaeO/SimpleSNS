@@ -1,5 +1,6 @@
 package com.toyproject.simplesns.domain.user.service
 
+import com.toyproject.simplesns.domain.user.exception.UnfollowingUserException
 import com.toyproject.simplesns.domain.user.repository.FollowRepository
 import com.toyproject.simplesns.domain.user.repository.UserRepository
 import com.toyproject.simplesns.domain.user.util.UserUtil
@@ -18,7 +19,11 @@ class UnFollowService(
     fun execute(id: Long) {
         val user = userRepository.findByIdOrNull(id) ?: throw UserNotFoundException()
         val currentUser = userUtil.fetchCurrentUser()
-        
+
+        try {
         followRepository.deleteByFollowerAndFollowing(user, currentUser)
+        } catch (e: UnfollowingUserException) {
+            throw e
+        }
     }
 }
