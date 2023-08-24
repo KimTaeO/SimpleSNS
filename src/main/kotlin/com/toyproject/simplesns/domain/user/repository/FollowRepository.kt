@@ -10,6 +10,6 @@ interface FollowRepository : JpaRepository<Follow, Long> {
     fun existsByFollowerAndFollowing(follower: User, following: User): Boolean
 
     @Modifying
-    @Query("DELETE FROM Follow f WHERE f.follower = :follower AND f.following = :following")
-    fun deleteByFollowerAndFollowing(follower: User, following: User)
+    @Query("DELETE FROM Follow f WHERE f.follower.id = :followerId AND f.following.id = :followingId")
+    fun deleteByFollowerAndFollowing(followerId: Long, followingId: Long)
 }
