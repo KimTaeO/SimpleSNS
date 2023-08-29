@@ -7,8 +7,10 @@ import com.toyproject.simplesns.domain.user.enums.UserRole
 import com.toyproject.simplesns.domain.user.repository.UserRepository
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
 @Service
+@Transactional(rollbackFor = [Exception::class])
 class SignUpService(
     private val userRepository: UserRepository,
     private val passwordEncoder: PasswordEncoder

@@ -5,7 +5,11 @@ import com.toyproject.simplesns.global.exception.exceptions.UserNotFoundExceptio
 import com.toyproject.simplesns.global.security.auth.AuthDetails
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
+import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
+@Service
+@Transactional(readOnly = true)
 class AuthDetailsService(
     private val userRepository: UserRepository
 ) : UserDetailsService {
