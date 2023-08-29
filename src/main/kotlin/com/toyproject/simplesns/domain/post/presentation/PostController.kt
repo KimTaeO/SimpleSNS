@@ -35,7 +35,7 @@ class PostController(
         return ResponseEntity(HttpStatus.OK)
     }
 
-    @PatchMapping("/{post_id}")
+    @PatchMapping("private/{post_id}")
     fun changeVisibilityFalse(@PathVariable("post_id") postId: Long): ResponseEntity<Void> {
         changeVisibilityFalseService.execute(postId)
         return ResponseEntity(HttpStatus.OK)
